@@ -9,8 +9,10 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Rosewood">
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACfklEQVR42u3dv03DQBTAYdvKDpSUaejS0TIFJX0GYAS2oGQKWiZAkSgp2YKCBoV/wfFd7t37vg6FIMf5+R0othl3m+0A35nsAsSBOBAH4kAciANxIA7EgThAHIgDcSAOxIE4EAfiQByIA8SBOBAH4kAciANxIA7EgThgFWtz1493n798ubq1zeWMUW7esreLQ+zuiNtsWaGjOH45BP981DabHIgDcSAOxIE4EAfiIL1Kn608vb0e8/R14Z9fQultvjw7NzmwrCAOxIE4EAfiAHEgDlLEcX9xPftR22xysLxKlyYs9dnHzfNDuOOv0DZX+GwlWBzUjMOygjgQB+JAHIgDcSAOxIE4EAeIA3EgDsSBOBAHQVS6BcPeqXIcr8I9kE0OxIE4EAfiQByIA3EgDsSBOEAcHG5lFww/fIgV4n/0iaNqE18fTVvJShYHfnPCRCZlFH2WydF5FmlHyKQMI0QciKPK4Z5keEzK0IdlBXFUPMS7Hx4mB+JAHJUnf98ri8mBOBAH4kAciANxnEDpcy/6PrfD5EAciKPm5O/+fEGTg9xxlDjEM5xmnGVyLPteJjkB3bKCOJY73PNct5LroqaP93X2SRjZrojMuKzMe48TXiub9ELqf40QV9nnTWRwfw5xmA1+50AciANxIA7EgTgQB+IAcSAOxEH4OBLeG7qD/WlyIA5ajsPKEm5Pmhy0EYfhEWsfTh2/NmVYVugoDsMjyn4bd5vtqV6tc74bP5ymhK9ZGQEmhxHS+MHTRBwqaXOgthUH2f9aQRyIA3EgDhAH4kAciANxIA7EgTgQB+IAcSAOxIE4EAfiQByIA3EgDsQB4kAciANxIA7EQRjv95yamQmGBZYAAAAASUVORK5CYII=">
-<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACfklEQVR42u3dv03DQBTAYdvKDpSUaejS0TIFJX0GYAS2oGQKWiZAkSgp2YKCBoV/wfFd7t37vg6FIMf5+R0othl3m+0A35nsAsSBOBAH4kAciANxIA7EgThAHIgDcSAOxIE4EAfiQByIA8SBOBAH4kAciANxIA7EgThgFWtz1493n798ubq1zeWMUW7esreLQ+zuiNtsWaGjOH45BP981DabHIgDcSAOxIE4EAfiIL1Kn608vb0e8/R14Z9fQultvjw7NzmwrCAOxIE4EAfiAHEgDlLEcX9xPftR22xysLxKlyYs9dnHzfNDuOOv0DZX+GwlWBzUjMOygjgQB+JAHIgDcSAOxIE4EAeIA3EgDsSBOBAHQVS6BcPeqXIcr8I9kE0OxIE4EAfiQByIA3EgDsSBOEAcHG5lFww/fIgV4n/0iaNqE18fTVvJShYHfnPCRCZlFH2WydF5FmlHyKQMI0QciKPK4Z5keEzK0IdlBXFUPMS7Hx4mB+JAHJUnf98ri8mBOBAH4kAciANxnEDpcy/6PrfD5EAciKPm5O/+fEGTg9xxlDjEM5xmnGVyLPteJjkB3bKCOJY73PNct5LroqaP93X2SRjZrojMuKzMe48TXiub9ELqf40QV9nnTWRwfw5xmA1+50AciANxIA7EgTgQB+IAcSAOxEH4OBLeG7qD/WlyIA5ajsPKEm5Pmhy0EYfhEWsfTh2/NmVYVugoDsMjyn4bd5vtqV6tc74bP5ymhK9ZGQEmhxHS+MHTRBwqaXOgthUH2f9aQRyIA3EgDhAH4kAciANxIA7EgTgQB+IAcSAOxIE4EAfiQByIA3EgDsQB4kAciANxIA7EQRjv95yamQmGBZYAAAAASUVORK5CYII=">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
 <title>Rosewood Planner</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -250,11 +252,64 @@ label.f .field{text-transform:none; letter-spacing:0; font-weight:400; font-size
 .confirm{display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:13px; color:var(--hi)}
 @media (prefers-reduced-motion: no-preference){
   .modal{animation:pop .18s ease-out}
-  @keyframes pop{from{transform:translateY(8px) scale(.98); opacity:.6} to{transform:none; opacity:1}}
+  @keyframes pop{from{transform:translateY(24px); opacity:.6} to{transform:none; opacity:1}}
 }
+
+/* ---------- iPhone app layer ---------- */
+button,a,input,select,textarea,label{touch-action:manipulation; -webkit-tap-highlight-color:transparent}
+.hdr-actions{display:flex; gap:8px; align-items:center}
+.backupbtn{position:relative}
+.backupbtn .dot{position:absolute; top:-3px; right:-3px; width:10px; height:10px; border-radius:50%; background:var(--hi); border:2px solid var(--surface)}
+.install{display:flex; gap:12px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:12px 14px; box-shadow:var(--shadow)}
+.install p{margin:0; flex:1; font-size:14px}
+.install b{color:var(--accent-deep)}
+.shareglyph{display:inline-block; width:16px; height:16px; vertical-align:-3px; color:var(--accent)}
+.bnav{display:none}
+.info{background:var(--surface-2); border-radius:12px; padding:12px 14px; font-size:14px; color:var(--ink-2)}
+.info strong{color:var(--ink)}
+.filepick{position:absolute; width:1px; height:1px; opacity:0; pointer-events:none}
+@media (max-width:760px){
+  body{padding-block:10px 96px}
+  .tabs{display:none}
+  .brand{gap:4px 10px}
+  .brand h1{font-size:28px}
+  .brand .today{font-size:13px; flex-basis:100%}
+  .iconbtn{width:44px; height:44px}
+  .btn{min-height:44px}
+  .seg button{min-height:38px}
+  .x{min-width:40px; min-height:40px; font-size:20px; opacity:.8}
+  .todo{padding:10px 6px}
+  .todo input[type=checkbox]{width:26px; height:26px}
+  .ev{padding:9px 11px; font-size:14px}
+  .jitems{max-height:none}
+  .jed{min-height:0; padding:18px}
+  .jed input.jtitle{font-size:26px}
+  .jed textarea{min-height:50vh; font-size:17px}
+  /* one section at a time, picked from the bottom bar */
+  body[data-m="cal"] #sec-todo, body[data-m="cal"] #sec-notes,
+  body[data-m="todo"] #sec-cal, body[data-m="todo"] #sec-notes, body[data-m="todo"] .focus,
+  body[data-m="notes"] #sec-cal, body[data-m="notes"] #sec-todo, body[data-m="notes"] .focus{display:none}
+  body[data-m="journal"] .jlist{display:var(--jl, flex)}
+  body.j-editing .jlist{display:none}
+  body:not(.j-editing) .jed{display:none}
+  .jback{display:inline-flex!important}
+  .bnav{display:grid; grid-template-columns:repeat(4,1fr); position:fixed; left:0; right:0; bottom:0; z-index:40;
+    background:color-mix(in srgb, var(--surface) 92%, transparent); -webkit-backdrop-filter:saturate(1.6) blur(16px); backdrop-filter:saturate(1.6) blur(16px);
+    border-top:1px solid var(--line); padding:6px 6px calc(6px + env(safe-area-inset-bottom, 0px))}
+  .bnav button{border:0; background:transparent; display:flex; flex-direction:column; align-items:center; gap:2px; padding:6px 0; min-height:50px;
+    font-size:11px; font-weight:600; color:var(--ink-3); position:relative}
+  .bnav svg{width:25px; height:25px}
+  .bnav button[aria-current="true"]{color:var(--accent)}
+  .bnav .badge{position:absolute; top:2px; left:calc(50% + 8px); background:var(--hi); color:var(--surface); font-size:10px; font-weight:800; min-width:18px; height:18px; border-radius:9px; display:grid; place-items:center; padding:0 5px}
+  .scrim{align-items:end; padding:0}
+  .modal{width:100%; max-height:92%; border-radius:20px 20px 0 0; padding:20px 18px calc(20px + env(safe-area-inset-bottom, 0px))}
+  .modal::before{content:""; width:40px; height:5px; border-radius:3px; background:var(--line); align-self:center; margin:-8px 0 4px}
+}
+.jback{display:none}
+@media (display-mode: standalone){ .install{display:none!important} }
 </style>
 </head>
-<body>
+<body data-m="cal">
 <div class="wrap">
   <header class="top">
     <div class="brand">
@@ -262,17 +317,25 @@ label.f .field{text-transform:none; letter-spacing:0; font-weight:400; font-size
       <span class="today" id="todayLabel"></span>
       <span class="sync on" id="sync">Saved on this phone</span>
     </div>
+    <div class="hdr-actions">
+    <button class="btn backupbtn" id="openBackup" aria-label="Backup and settings">Backup<span class="dot" id="backupDot" hidden></span></button>
     <div class="tabs" role="tablist">
       <button role="tab" id="tab-planner" aria-selected="true">Planner</button>
       <button role="tab" id="tab-journal" aria-selected="false">Journal</button>
     </div>
+    </div>
   </header>
+
+  <div class="install" id="installHint" hidden>
+    <p><b>Install on your iPhone:</b> tap Share <svg class="shareglyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg> then <b>Add to Home Screen</b>. It opens full screen and keeps your data safer.</p>
+    <button class="x" id="installClose" aria-label="Dismiss">×</button>
+  </div>
 
   <!-- PLANNER -->
   <div id="view-planner" class="wrap" style="gap:16px">
     <div class="focus" id="focus" aria-label="High-priority appointments in the next 7 days"></div>
     <div class="grid">
-      <main class="panel cal">
+      <main class="panel cal" id="sec-cal">
         <div class="calbar">
           <div class="nav">
             <button class="iconbtn" id="prev" aria-label="Previous">‹</button>
@@ -298,7 +361,7 @@ label.f .field{text-transform:none; letter-spacing:0; font-weight:400; font-size
       </main>
 
       <aside class="side">
-        <section class="panel">
+        <section class="panel" id="sec-todo">
           <div class="shead"><h2>To-do</h2><span class="count tnum" id="todoCount"></span></div>
           <form class="addrow" id="todoForm">
             <input class="field" id="todoText" placeholder="Add a task…" autocomplete="off">
@@ -311,7 +374,7 @@ label.f .field{text-transform:none; letter-spacing:0; font-weight:400; font-size
           <button class="subtle" id="toggleDone"></button>
         </section>
 
-        <section class="panel">
+        <section class="panel" id="sec-notes">
           <div class="shead"><h2>Notes</h2><button class="btn ghost" id="addNote">+ New note</button></div>
           <div class="notes" id="noteList"></div>
         </section>
@@ -332,6 +395,13 @@ label.f .field{text-transform:none; letter-spacing:0; font-weight:400; font-size
   </div>
 </div>
 
+<nav class="bnav" aria-label="Sections">
+  <button data-m="cal" aria-current="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Calendar</button>
+  <button data-m="todo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M8 12.5l3 3 5-6"/></svg>To-do<span class="badge" id="todoBadge" hidden></span></button>
+  <button data-m="notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.5H7a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-8z"/><path d="M14 3.5v6h6M8 13h8M8 17h5"/></svg>Notes</button>
+  <button data-m="journal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3M9 7.5h6"/></svg>Journal</button>
+</nav>
+<input type="file" id="restoreFile" class="filepick" accept="application/json,.json">
 <div id="modalRoot"></div>
 <div id="toastRoot"></div>
 
@@ -454,7 +524,7 @@ function renderCal(){
     body.innerHTML = `<div class="month">${h}</div>`;
   }
 }
-function renderTodos(){
+function renderTodos(){ if(typeof updateBadge==='function') setTimeout(updateBadge);
   const open = store.todos.filter(t=>!t.done).length;
   $('#todoCount').textContent = `${open} open`;
   const list = store.todos.filter(t => showDone || !t.done).sort((a,b) => (a.done-b.done) || (PRI_RANK[a.priority]-PRI_RANK[b.priority]) || ((a.createdAt||0)-(b.createdAt||0)));
@@ -497,7 +567,7 @@ function renderJEditor(){
     return;
   }
   const words = (j.body||'').trim().split(/\s+/).filter(Boolean).length;
-  $('#jed').innerHTML = `<div class="jmeta"><input type="date" class="field" id="jdate" value="${esc(j.date)}" style="width:auto" aria-label="Entry date">
+  $('#jed').innerHTML = `<div><button class="btn ghost jback" id="jback">‹ All entries</button></div><div class="jmeta"><input type="date" class="field" id="jdate" value="${esc(j.date)}" style="width:auto" aria-label="Entry date">
       <div class="moods" role="group" aria-label="Mood">${MOODS.map(m=>`<button class="mood" data-mood="${m}" aria-pressed="${j.mood===m}">${m}</button>`).join('')}</div></div>
     <input class="jtitle" id="jtitle" value="${esc(j.title)}" placeholder="Give today a title">
     <textarea id="jbody" placeholder="${esc(PROMPTS[(parse(j.date).getDate())%PROMPTS.length])}">${esc(j.body)}</textarea>
@@ -515,6 +585,7 @@ function renderSoft(c){
 function renderAll(){
   $('#todayLabel').textContent = new Date().toLocaleDateString([], {weekday:'long', month:'long', day:'numeric', year:'numeric'});
   renderFocus(); renderCal(); renderTodos(); renderSoft('notes'); renderSoft('journal');
+  if(typeof updateBadge==='function'){ updateBadge(); refreshBackupDot(); }
 }
 
 /* ---------- appointment modal ---------- */
@@ -636,12 +707,103 @@ document.querySelectorAll('.seg button').forEach(b => b.onclick = () => setView(
 function shift(dir){ if(view==='day') cursor = addDays(cursor, dir); else if(view==='week') cursor = addDays(cursor, 7*dir); else cursor = new Date(cursor.getFullYear(), cursor.getMonth()+dir, 1); renderCal(); }
 $('#prev').onclick = () => shift(-1); $('#next').onclick = () => shift(1);
 $('#goToday').onclick = () => { cursor = new Date(); renderCal(); };
-function setTab(t){ tab = t; $('#view-planner').hidden = t!=='planner'; $('#view-journal').hidden = t!=='journal';
+function setTab(t){ tab = t; document.body.classList.toggle('j-editing', t==='journal' && !!currentEntry); $('#view-planner').hidden = t!=='planner'; $('#view-journal').hidden = t!=='journal';
   $('#tab-planner').setAttribute('aria-selected', String(t==='planner')); $('#tab-journal').setAttribute('aria-selected', String(t==='journal'));
   if(t==='journal'){ renderJList(); renderJEditor(); } }
 $('#tab-planner').onclick = () => setTab('planner'); $('#tab-journal').onclick = () => setTab('journal');
 if(location.hash === '#journal') setTab('journal');
 setInterval(() => { if(view==='day' && ymd(cursor)===today() && !document.querySelector('.scrim')) { const sc = document.querySelector('.dayscroll'); const top = sc?.scrollTop; renderCal(); const sc2 = document.querySelector('.dayscroll'); if(sc2 && top!=null) sc2.scrollTop = top; } }, 60000);
+
+/* ---------- iPhone app layer ---------- */
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+const isStandalone = window.navigator.standalone === true || matchMedia('(display-mode: standalone)').matches;
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+
+// bottom bar
+function setM(m){
+  document.body.dataset.m = m;
+  document.querySelectorAll('.bnav button').forEach(b => b.setAttribute('aria-current', String(b.dataset.m===m)));
+  setTab(m==='journal' ? 'journal' : 'planner');
+  lsSet('rosewood.m', m); window.scrollTo(0,0);
+}
+document.querySelectorAll('.bnav button').forEach(b => b.onclick = () => setM(b.dataset.m));
+const savedM = lsGet('rosewood.m'); if(['cal','todo','notes','journal'].includes(savedM) && matchMedia('(max-width:760px)').matches) setM(savedM);
+function updateBadge(){ const n = store.todos.filter(t => !t.done).length; const b = $('#todoBadge'); b.textContent = n; b.hidden = n===0; }
+
+// journal: list <-> editor on phone
+document.addEventListener('click', e => {
+  if(e.target.closest('#jback')){ document.body.classList.remove('j-editing'); renderJList(); window.scrollTo(0,0); return; }
+  if(e.target.closest('[data-entry],#newEntry,#startEntry')) setTimeout(() => { document.body.classList.toggle('j-editing', !!currentEntry); window.scrollTo(0,0); }, 0);
+});
+
+// swipe the calendar to move between days / weeks / months
+let sx=0, sy=0;
+$('#calBody').addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive:true});
+$('#calBody').addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+  if(Math.abs(dx) > 70 && Math.abs(dy) < 45) shift(dx < 0 ? 1 : -1); }, {passive:true});
+
+// install hint (Safari on iPhone, not yet on the Home Screen)
+if(isIOS && !isStandalone && !lsGet('rosewood.installDismissed')) $('#installHint').hidden = false;
+$('#installClose').onclick = () => { $('#installHint').hidden = true; lsSet('rosewood.installDismissed','1'); };
+
+// ask the browser to keep this data (Safari 17+ honours this for Home Screen apps)
+try{ navigator.storage?.persist?.(); }catch(e){}
+
+// ---------- backup & restore ----------
+const hasOwnData = () => COLLS.some(c => store[c].some(x => !/^(ex|td|nt|jr)\d$/.test(x.id)));
+function backupDue(){ const last = +lsGet('rosewood.lastBackup') || 0; return hasOwnData() && (Date.now() - last) > 7*864e5; }
+function refreshBackupDot(){ $('#backupDot').hidden = !backupDue(); }
+function markBackup(){ lsSet('rosewood.lastBackup', String(Date.now())); refreshBackupDot(); }
+async function exportBackup(){
+  const name = `rosewood-backup-${today()}.json`;
+  const json = JSON.stringify({app:'rosewood-planner', version:2, exportedAt:new Date().toISOString(), events:store.events, todos:store.todos, notes:store.notes, journal:store.journal});
+  const file = new File([json], name, {type:'application/json'});
+  if(navigator.canShare && navigator.canShare({files:[file]})){
+    try{ await navigator.share({files:[file], title:'Rosewood Planner backup'}); markBackup(); toast('Backup saved'); openBackup(); return; }
+    catch(e){ if(e && e.name === 'AbortError') return; }
+  }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(file); a.download = name; document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000); markBackup(); toast('Backup downloaded'); openBackup();
+}
+let pendingRestore = null;
+$('#restoreFile').onchange = async e => {
+  const f = e.target.files[0]; e.target.value = ''; if(!f) return;
+  try{ const o = JSON.parse(await f.text()); if(!COLLS.every(c => Array.isArray(o[c]))) throw 0; pendingRestore = o; openBackup(); }
+  catch(err){ toast('That file isn’t a Rosewood backup'); }
+};
+function openBackup(){
+  const last = +lsGet('rosewood.lastBackup') || 0;
+  const pl = (n,a,b) => `${n} ${n===1?a:b}`;
+  const counts = `${pl(store.events.length,'appointment','appointments')} · ${pl(store.todos.length,'task','tasks')} · ${pl(store.notes.length,'note','notes')} · ${pl(store.journal.length,'journal entry','journal entries')}`;
+  const r = pendingRestore;
+  $('#modalRoot').innerHTML = `<div class="scrim" id="scrim"><div class="panel modal" role="dialog" aria-label="Backup">
+    <h3>Backup</h3>
+    <div class="info"><strong>Your planner is saved on this phone only.</strong> Clearing Safari’s history and website data erases it. Save a backup to Files or iCloud Drive now and then, so you can restore it on this or another phone.</div>
+    <p style="margin:0; font-size:14px; color:var(--ink-2)" class="tnum">${counts}<br>Last backup: <b>${last ? new Date(last).toLocaleDateString([], {month:'short', day:'numeric', year:'numeric'}) : 'never'}</b></p>
+    ${r ? `<div class="info" style="background:var(--hi-bg)"><strong>Restore backup from ${esc(new Date(r.exportedAt||Date.now()).toLocaleDateString([], {month:'short', day:'numeric', year:'numeric'}))}?</strong><br>
+        ${r.events.length} appointments, ${r.todos.length} tasks, ${r.notes.length} notes, ${r.journal.length} entries. This replaces what’s on this phone now.
+        <div class="r" style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap"><button class="btn danger" id="doRestore">Replace with backup</button><button class="btn ghost" id="noRestore">Cancel</button></div></div>` : ''}
+    <div style="display:flex; flex-direction:column; gap:8px">
+      <button class="btn primary" id="doBackup">Save a backup</button>
+      <button class="btn" id="pickRestore">Restore from a backup file</button>
+    </div>
+    ${isStandalone ? '' : `<div class="info"><strong>Tip:</strong> add the planner to your Home Screen (Share → Add to Home Screen). It opens full screen, works offline, and Safari is less likely to clear its data.</div>`}
+    <div class="mfoot"><span></span><button class="btn ghost" id="closeBackup">Done</button></div>
+  </div></div>`;
+  const close = () => { $('#modalRoot').innerHTML = ''; pendingRestore = null; };
+  $('#closeBackup').onclick = close; $('#scrim').onclick = e => { if(e.target.id==='scrim') close(); };
+  $('#doBackup').onclick = exportBackup;
+  $('#pickRestore').onclick = () => $('#restoreFile').click();
+  if(r){ $('#noRestore').onclick = () => { pendingRestore = null; openBackup(); };
+    $('#doRestore').onclick = () => { COLLS.forEach(c => store[c] = r[c]); saveLocal(); pendingRestore = null; currentEntry = null; renderAll(); close(); toast('Backup restored'); }; }
+}
+$('#openBackup').onclick = openBackup;
+
+// offline support
+if('serviceWorker' in navigator && location.protocol === 'https:'){
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
+}
 
 connect();
 })();
