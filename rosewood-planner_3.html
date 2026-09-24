@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#D6336C">
+<meta name="color-scheme" content="light only">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Rosewood">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACfklEQVR42u3dv03DQBTAYdvKDpSUaejS0TIFJX0GYAS2oGQKWiZAkSgp2YKCBoV/wfFd7t37vg6FIMf5+R0othl3m+0A35nsAsSBOBAH4kAciANxIA7EgThAHIgDcSAOxIE4EAfiQByIA8SBOBAH4kAciANxIA7EgThgFWtz1493n798ubq1zeWMUW7esreLQ+zuiNtsWaGjOH45BP981DabHIgDcSAOxIE4EAfiIL1Kn608vb0e8/R14Z9fQultvjw7NzmwrCAOxIE4EAfiAHEgDlLEcX9xPftR22xysLxKlyYs9dnHzfNDuOOv0DZX+GwlWBzUjMOygjgQB+JAHIgDcSAOxIE4EAeIA3EgDsSBOBAHQVS6BcPeqXIcr8I9kE0OxIE4EAfiQByIA3EgDsSBOEAcHG5lFww/fIgV4n/0iaNqE18fTVvJShYHfnPCRCZlFH2WydF5FmlHyKQMI0QciKPK4Z5keEzK0IdlBXFUPMS7Hx4mB+JAHJUnf98ri8mBOBAH4kAciANxnEDpcy/6PrfD5EAciKPm5O/+fEGTg9xxlDjEM5xmnGVyLPteJjkB3bKCOJY73PNct5LroqaP93X2SRjZrojMuKzMe48TXiub9ELqf40QV9nnTWRwfw5xmA1+50AciANxIA7EgTgQB+IAcSAOxEH4OBLeG7qD/WlyIA5ajsPKEm5Pmhy0EYfhEWsfTh2/NmVYVugoDsMjyn4bd5vtqV6tc74bP5ymhK9ZGQEmhxHS+MHTRBwqaXOgthUH2f9aQRyIA3EgDhAH4kAciANxIA7EgTgQB+IAcSAOxIE4EAfiQByIA3EgDsQB4kAciANxIA7EQRjv95yamQmGBZYAAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACfklEQVR42u3dv03DQBTAYdvKDpSUaejS0TIFJX0GYAS2oGQKWiZAkSgp2YKCBoV/wfFd7t37vg6FIMf5+R0othl3m+0A35nsAsSBOBAH4kAciANxIA7EgThAHIgDcSAOxIE4EAfiQByIA8SBOBAH4kAciANxIA7EgThgFWtz1493n798ubq1zeWMUW7esreLQ+zuiNtsWaGjOH45BP981DabHIgDcSAOxIE4EAfiIL1Kn608vb0e8/R14Z9fQultvjw7NzmwrCAOxIE4EAfiAHEgDlLEcX9xPftR22xysLxKlyYs9dnHzfNDuOOv0DZX+GwlWBzUjMOygjgQB+JAHIgDcSAOxIE4EAeIA3EgDsSBOBAHQVS6BcPeqXIcr8I9kE0OxIE4EAfiQByIA3EgDsSBOEAcHG5lFww/fIgV4n/0iaNqE18fTVvJShYHfnPCRCZlFH2WydF5FmlHyKQMI0QciKPK4Z5keEzK0IdlBXFUPMS7Hx4mB+JAHJUnf98ri8mBOBAH4kAciANxnEDpcy/6PrfD5EAciKPm5O/+fEGTg9xxlDjEM5xmnGVyLPteJjkB3bKCOJY73PNct5LroqaP93X2SRjZrojMuKzMe48TXiub9ELqf40QV9nnTWRwfw5xmA1+50AciANxIA7EgTgQB+IAcSAOxEH4OBLeG7qD/WlyIA5ajsPKEm5Pmhy0EYfhEWsfTh2/NmVYVugoDsMjyn4bd5vtqV6tc74bP5ymhK9ZGQEmhxHS+MHTRBwqaXOgthUH2f9aQRyIA3EgDhAH4kAciANxIA7EgTgQB+IAcSAOxIE4EAfiQByIA3EgDsQB4kAciANxIA7EQRjv95yamQmGBZYAAAAASUVORK5CYII=">
+<title>Rosewood Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0}
+[hidden]{display:none!important}
+img{max-width:100%}
+:root{
+  color-scheme:light only;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#FDF0F4; --bg-glow:#F9D3E0; --surface:#FFFFFF; --surface-2:#FCE6EE; --line:#F1C6D5;
+  --ink:#3A1427; --ink-2:#7A4A60; --ink-3:#A87E91;
+  --accent:#D6336C; --accent-deep:#9C1C4D; --accent-soft:#F9D3E0; --on-accent:#FFFFFF;
+  --hi:#C8102E; --hi-bg:#FDE0E4; --md:#B85A14; --md-bg:#FCEBDB; --lo:#3F7454; --lo-bg:#E1EFE6;
+  --shadow:0 10px 30px -18px rgba(156,28,77,.45);
+  --display:"DM Serif Display", Georgia, "Times New Roman", serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r:14px;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--bg);
+  background-image:radial-gradient(1200px 500px at 85% -10%, var(--bg-glow), transparent 60%),
+                   radial-gradient(900px 400px at -10% 110%, var(--bg-glow), transparent 60%);
+  background-attachment:fixed;
+  color:var(--ink); font-family:var(--body); font-size:15px; line-height:1.5;
+  padding-inline:16px; padding-block:18px 40px; min-height:100%;
+}
+.wrap{max-width:1280px; margin:0 auto; display:flex; flex-direction:column; gap:16px}
+button,input,select,textarea{font:inherit; color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* Header */
+.top{display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px; justify-content:space-between}
+.brand{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+.brand h1{font-family:var(--display); font-weight:400; font-size:34px; line-height:1; margin:0; color:var(--accent-deep); letter-spacing:.2px}
+.brand h1 i{color:var(--accent)}
+.brand .today{color:var(--ink-2); font-size:14px}
+.sync{font-size:12px; color:var(--ink-3); display:inline-flex; align-items:center; gap:6px}
+.sync::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--ink-3)}
+.sync.on::before{background:var(--lo)}
+.tabs{display:flex; gap:4px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:4px}
+.tabs button{border:0; background:transparent; padding:8px 18px; border-radius:999px; font-weight:600; color:var(--ink-2)}
+.tabs button[aria-selected="true"]{background:var(--accent); color:var(--on-accent)}
+
+/* Focus strip */
+.focus{display:flex; gap:10px; overflow-x:auto; padding-bottom:4px; scrollbar-width:thin}
+.focus-label{flex:0 0 auto; display:flex; flex-direction:column; justify-content:center; padding-right:6px}
+.focus-label b{font-family:var(--display); font-weight:400; font-size:20px; color:var(--accent-deep); line-height:1.1}
+.focus-label span{font-size:12px; color:var(--ink-3)}
+.fchip{flex:0 0 auto; display:flex; flex-direction:column; gap:2px; min-width:170px; max-width:240px; text-align:left;
+  background:var(--hi-bg); border:1px solid color-mix(in srgb, var(--hi) 35%, transparent); border-radius:12px; padding:9px 12px}
+.fchip .when{font-size:12px; font-weight:600; color:var(--hi); text-transform:uppercase; letter-spacing:.06em}
+.fchip .what{font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.fchip.empty{background:var(--surface); border-color:var(--line); color:var(--ink-3)}
+
+/* Layout */
+.grid{display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:16px; align-items:start}
+@media (max-width:980px){ .grid{grid-template-columns:minmax(0,1fr)} }
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow)}
+.cal{padding:14px}
+.calbar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin-bottom:12px}
+.nav{display:flex; align-items:center; gap:6px}
+.iconbtn{width:36px; height:36px; border-radius:10px; border:1px solid var(--line); background:var(--surface); display:grid; place-items:center; color:var(--accent-deep); font-size:18px; line-height:1}
+.iconbtn:hover{background:var(--surface-2)}
+.btn{border:1px solid var(--line); background:var(--surface); border-radius:10px; padding:8px 14px; font-weight:600; color:var(--ink)}
+.btn:hover{background:var(--surface-2)}
+.btn.primary{background:var(--accent); color:var(--on-accent); border-color:transparent}
+.btn.primary:hover{background:var(--accent-deep)}
+.btn.ghost{border-color:transparent; background:transparent; color:var(--ink-2)}
+.btn.danger{color:var(--hi); border-color:color-mix(in srgb, var(--hi) 40%, transparent)}
+.rangelabel{font-family:var(--display); font-size:24px; font-weight:400; margin:0 6px; text-wrap:balance}
+.seg{display:inline-flex; background:var(--surface-2); border-radius:10px; padding:3px}
+.seg button{border:0; background:transparent; padding:6px 14px; border-radius:8px; font-weight:600; color:var(--ink-2)}
+.btn{white-space:nowrap}
+@media (max-width:600px){
+  .calbar{flex-direction:column; align-items:stretch}
+  .calbar .nav{flex-wrap:wrap}
+  .rangelabel{font-size:21px; flex:1 1 100%; order:-1; margin:0 0 2px}
+  .calbar .nav:last-child{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px}
+  .seg{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); min-width:0}
+  .seg button{padding:7px 4px}
+  #newEvent{padding:8px 12px}
+  .brand h1{font-size:30px}
+  .wcol{padding:8px 10px}
+  .wcol .whead{width:100%; justify-content:flex-start; gap:10px; align-items:baseline}
+  .wadd{margin-top:0; align-self:flex-start; padding:3px 12px}
+}
+.seg button[aria-pressed="true"]{background:var(--surface); color:var(--accent-deep); box-shadow:0 1px 3px rgba(0,0,0,.12)}
+
+/* Priority */
+.pri{display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; padding:2px 8px; border-radius:999px; white-space:nowrap}
+.pri::before{content:""; width:7px; height:7px; border-radius:50%; background:currentColor}
+.pri.high{color:var(--hi); background:var(--hi-bg)}
+.pri.med{color:var(--md); background:var(--md-bg)}
+.pri.low{color:var(--lo); background:var(--lo-bg)}
+.legend{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
+
+/* Event block */
+.ev{display:block; width:100%; text-align:left; border:0; border-radius:10px; padding:6px 9px; font-size:13px; line-height:1.3; overflow:hidden;
+  border-left:4px solid var(--c); background:var(--cbg); color:var(--ink)}
+.ev.high{--c:var(--hi); --cbg:var(--hi-bg)}
+.ev.med{--c:var(--md); --cbg:var(--md-bg)}
+.ev.low{--c:var(--lo); --cbg:var(--lo-bg)}
+.ev.high{font-weight:600; box-shadow:0 0 0 1px color-mix(in srgb, var(--hi) 30%, transparent)}
+.ev .t{font-size:11px; font-weight:700; color:var(--c)}
+.ev .n{display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.ev .loc{display:block; font-size:11px; color:var(--ink-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.ev:hover{filter:brightness(.97)}
+
+/* Day view */
+.day{display:grid; grid-template-columns:56px 1fr; position:relative}
+.hours{display:flex; flex-direction:column}
+.hours div{height:var(--hh); font-size:11px; color:var(--ink-3); text-align:right; padding-right:8px; transform:translateY(-7px)}
+.lane{position:relative; border-left:1px solid var(--line)}
+.lane .slot{height:var(--hh); border-top:1px solid var(--line); cursor:pointer}
+.lane .slot:hover{background:var(--surface-2)}
+.lane .ev{position:absolute}
+.nowline{position:absolute; left:0; right:0; height:2px; background:var(--accent); z-index:3; pointer-events:none}
+.nowline::before{content:""; position:absolute; left:-5px; top:-4px; width:10px; height:10px; border-radius:50%; background:var(--accent)}
+.untimed{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 10px 56px}
+.untimed .ev{width:auto; max-width:100%}
+.dayscroll{max-height:640px; overflow-y:auto; padding-top:8px}
+
+/* Week */
+.week{display:grid; grid-template-columns:repeat(7, minmax(0,1fr)); gap:8px}
+.wcol{background:var(--surface-2); border-radius:12px; padding:8px; min-height:260px; display:flex; flex-direction:column; gap:6px}
+.wcol.is-today{background:var(--accent-soft); box-shadow:inset 0 0 0 1.5px var(--accent)}
+.whead{display:flex; align-items:baseline; justify-content:space-between; gap:4px; border:0; background:transparent; padding:2px; text-align:left}
+.whead .dow{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-2); font-weight:700}
+.whead .dn{font-family:var(--display); font-size:24px; line-height:1; color:var(--accent-deep)}
+.wadd{margin-top:auto; border:1px dashed var(--line); background:transparent; border-radius:8px; padding:4px; color:var(--ink-3); font-size:12px}
+.wadd:hover{color:var(--accent); border-color:var(--accent)}
+@media (max-width:760px){
+  .week{grid-template-columns:minmax(0,1fr)}
+  .wcol{min-height:0}
+  .wadd{margin-top:2px}
+}
+
+/* Month */
+.month{display:grid; grid-template-columns:repeat(7, minmax(0,1fr)); gap:4px}
+.mdow{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-2); font-weight:700; text-align:center; padding:4px 0}
+.mcell{border:0; text-align:left; background:var(--surface-2); border-radius:10px; min-height:96px; padding:6px; display:flex; flex-direction:column; gap:3px; overflow:hidden}
+.mcell.out{opacity:.45}
+.mcell.is-today{background:var(--accent-soft); box-shadow:inset 0 0 0 1.5px var(--accent)}
+.mcell .d{font-weight:700; font-size:13px}
+.mcell .mini{font-size:11px; border-radius:6px; padding:1px 6px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border-left:3px solid var(--c); background:var(--cbg)}
+.mini.high{--c:var(--hi); --cbg:var(--hi-bg); font-weight:700}
+.mini.med{--c:var(--md); --cbg:var(--md-bg)}
+.mini.low{--c:var(--lo); --cbg:var(--lo-bg)}
+.mcell .more{font-size:11px; color:var(--ink-2)}
+.dots{display:none; gap:3px; flex-wrap:wrap}
+.dots i{width:7px; height:7px; border-radius:50%}
+.dots i.high{background:var(--hi)} .dots i.med{background:var(--md)} .dots i.low{background:var(--lo)}
+@media (max-width:640px){
+  .mcell{min-height:58px}
+  .mcell .mini,.mcell .more{display:none}
+  .dots{display:flex}
+}
+
+/* Sidebar */
+.side{display:flex; flex-direction:column; gap:16px}
+.side section{padding:14px}
+.shead{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px}
+.shead h2{font-family:var(--display); font-weight:400; font-size:22px; margin:0; color:var(--accent-deep)}
+.shead .count{font-size:12px; color:var(--ink-3)}
+.addrow{display:flex; gap:6px}
+.addrow input{flex:1; min-width:0}
+.field{font-size:16px; border:1px solid var(--line); background:var(--bg); border-radius:10px; padding:8px 10px; width:100%}
+.field:focus{border-color:var(--accent); outline:none; box-shadow:0 0 0 3px var(--accent-soft)}
+select.field{width:auto}
+.todos{list-style:none; margin:10px 0 0; padding:0; display:flex; flex-direction:column; gap:4px}
+.todo{display:grid; grid-template-columns:auto 1fr auto auto; align-items:center; gap:8px; padding:7px 6px; border-radius:10px}
+.todo:hover{background:var(--surface-2)}
+.todo input[type=checkbox]{appearance:none; width:20px; height:20px; border-radius:6px; border:2px solid var(--pc, var(--ink-3)); display:grid; place-items:center; margin:0; cursor:pointer}
+.todo input[type=checkbox]:checked{background:var(--pc, var(--accent)); border-color:var(--pc, var(--accent))}
+.todo input[type=checkbox]:checked::after{content:"✓"; color:var(--surface); font-size:13px; font-weight:800; line-height:1}
+.todo.high{--pc:var(--hi)} .todo.med{--pc:var(--md)} .todo.low{--pc:var(--lo)}
+.todo .txt{min-width:0; overflow-wrap:anywhere}
+.todo.done .txt{text-decoration:line-through; color:var(--ink-3)}
+.todo .due{font-size:11px; color:var(--ink-3)}
+.x{border:0; background:transparent; color:var(--ink-3); font-size:16px; padding:2px 6px; border-radius:6px; opacity:.6}
+.x:hover{opacity:1; color:var(--hi); background:var(--hi-bg)}
+.subtle{font-size:12px; color:var(--ink-3); border:0; background:transparent; padding:6px 0 0}
+.subtle:hover{color:var(--accent)}
+.notes{display:flex; flex-direction:column; gap:8px}
+.note{background:var(--surface-2); border-radius:12px; padding:8px 10px; display:flex; flex-direction:column; gap:4px}
+.note .nh{display:flex; gap:6px; align-items:center}
+.note input{border:0; background:transparent; font-weight:700; flex:1; min-width:0; padding:2px 0}
+.note input:focus,.note textarea:focus{outline:none}
+.note textarea{border:0; background:transparent; resize:vertical; min-height:60px; width:100%; line-height:1.45}
+.note .stamp{font-size:11px; color:var(--ink-3)}
+.empty{color:var(--ink-3); font-size:13px; padding:8px 2px}
+
+/* Journal */
+.journal{display:grid; grid-template-columns:300px minmax(0,1fr); gap:16px; align-items:start}
+@media (max-width:860px){ .journal{grid-template-columns:minmax(0,1fr)} }
+.jlist{padding:14px; display:flex; flex-direction:column; gap:10px}
+.jitems{display:flex; flex-direction:column; gap:6px; max-height:620px; overflow-y:auto}
+.jitem{border:1px solid transparent; background:transparent; text-align:left; border-radius:12px; padding:9px 10px; display:flex; flex-direction:column; gap:2px}
+.jitem:hover{background:var(--surface-2)}
+.jitem[aria-current="true"]{background:var(--accent-soft); border-color:var(--accent)}
+.jitem .jd{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--accent-deep)}
+.jitem .jt{font-weight:600}
+.jitem .jp{font-size:12px; color:var(--ink-2); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+.jed{padding:22px 26px; display:flex; flex-direction:column; gap:14px; min-height:540px}
+.jed .jmeta{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between}
+.jed input.jtitle{font-family:var(--display); font-size:32px; border:0; background:transparent; padding:0; width:100%; color:var(--accent-deep)}
+.jed input.jtitle:focus{outline:none}
+.jed textarea{border:0; background:transparent; resize:none; min-height:380px; flex:1; font-size:17px; line-height:1.7; max-width:68ch; width:100%}
+.jed textarea:focus{outline:none}
+.moods{display:flex; flex-wrap:wrap; gap:6px}
+.mood{border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:4px 12px; font-size:13px; color:var(--ink-2)}
+.mood[aria-pressed="true"]{background:var(--accent); color:var(--on-accent); border-color:transparent}
+.jfoot{display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; color:var(--ink-3); border-top:1px solid var(--line); padding-top:10px}
+.prompt{font-style:italic; color:var(--ink-2); font-family:var(--display); font-size:17px}
+
+/* Modal */
+.scrim{position:fixed; inset:0; background:color-mix(in srgb, var(--ink) 45%, transparent); display:grid; place-items:center; padding:16px; z-index:50}
+.modal{width:min(520px, 100%); max-height:calc(100% - 32px); overflow:auto; padding:20px; display:flex; flex-direction:column; gap:12px}
+.modal h3{font-family:var(--display); font-weight:400; font-size:26px; margin:0; color:var(--accent-deep)}
+.row{display:grid; grid-template-columns:repeat(auto-fit, minmax(130px,1fr)); gap:10px}
+label.f{display:flex; flex-direction:column; gap:4px; font-size:12px; font-weight:600; color:var(--ink-2); text-transform:uppercase; letter-spacing:.05em}
+label.f .field{text-transform:none; letter-spacing:0; font-weight:400; font-size:15px; color:var(--ink)}
+.prichoice{display:grid; grid-template-columns:repeat(3,1fr); gap:6px}
+.prichoice button{border:1.5px solid var(--line); background:var(--surface); border-radius:10px; padding:8px; font-weight:700; font-size:13px}
+.prichoice button.high[aria-pressed="true"]{background:var(--hi); border-color:var(--hi); color:var(--surface)}
+.prichoice button.med[aria-pressed="true"]{background:var(--md); border-color:var(--md); color:var(--surface)}
+.prichoice button.low[aria-pressed="true"]{background:var(--lo); border-color:var(--lo); color:var(--surface)}
+.mfoot{display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; margin-top:4px}
+.mfoot .r{display:flex; gap:8px; flex-wrap:wrap}
+.toast{position:fixed; left:50%; bottom:calc(20px + env(safe-area-inset-bottom, 0px)); transform:translateX(-50%); background:var(--ink); color:var(--bg); padding:10px 16px; border-radius:999px; font-size:14px; z-index:60; box-shadow:var(--shadow)}
+.confirm{display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:13px; color:var(--hi)}
+@media (prefers-reduced-motion: no-preference){
+  .modal{animation:pop .18s ease-out}
+  @keyframes pop{from{transform:translateY(8px) scale(.98); opacity:.6} to{transform:none; opacity:1}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>Rosewood <i>Planner</i></h1>
+      <span class="today" id="todayLabel"></span>
+      <span class="sync on" id="sync">Saved on this phone</span>
+    </div>
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-planner" aria-selected="true">Planner</button>
+      <button role="tab" id="tab-journal" aria-selected="false">Journal</button>
+    </div>
+  </header>
+
+  <!-- PLANNER -->
+  <div id="view-planner" class="wrap" style="gap:16px">
+    <div class="focus" id="focus" aria-label="High-priority appointments in the next 7 days"></div>
+    <div class="grid">
+      <main class="panel cal">
+        <div class="calbar">
+          <div class="nav">
+            <button class="iconbtn" id="prev" aria-label="Previous">‹</button>
+            <button class="btn" id="goToday">Today</button>
+            <button class="iconbtn" id="next" aria-label="Next">›</button>
+            <h2 class="rangelabel" id="rangeLabel"></h2>
+          </div>
+          <div class="nav">
+            <div class="seg" role="group" aria-label="Calendar view">
+              <button data-view="day" aria-pressed="false">Day</button>
+              <button data-view="week" aria-pressed="true">Week</button>
+              <button data-view="month" aria-pressed="false">Month</button>
+            </div>
+            <button class="btn primary" id="newEvent">+ New</button>
+          </div>
+        </div>
+        <div id="calBody"></div>
+        <div class="legend">
+          <span class="pri high">High · must happen</span>
+          <span class="pri med">Medium · important</span>
+          <span class="pri low">Low · flexible</span>
+        </div>
+      </main>
+
+      <aside class="side">
+        <section class="panel">
+          <div class="shead"><h2>To-do</h2><span class="count tnum" id="todoCount"></span></div>
+          <form class="addrow" id="todoForm">
+            <input class="field" id="todoText" placeholder="Add a task…" autocomplete="off">
+            <select class="field" id="todoPri" aria-label="Priority">
+              <option value="high">High</option><option value="med" selected>Med</option><option value="low">Low</option>
+            </select>
+            <button class="btn primary" type="submit" aria-label="Add task">+</button>
+          </form>
+          <ul class="todos" id="todoList"></ul>
+          <button class="subtle" id="toggleDone"></button>
+        </section>
+
+        <section class="panel">
+          <div class="shead"><h2>Notes</h2><button class="btn ghost" id="addNote">+ New note</button></div>
+          <div class="notes" id="noteList"></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <!-- JOURNAL -->
+  <div id="view-journal" hidden>
+    <div class="journal">
+      <aside class="panel jlist">
+        <button class="btn primary" id="newEntry">+ New entry</button>
+        <input class="field" id="jsearch" placeholder="Search your journal…">
+        <div class="jitems" id="jitems"></div>
+      </aside>
+      <article class="panel jed" id="jed"></article>
+    </div>
+  </div>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toastRoot"></div>
+
+<script>
+(() => {
+/* ---------- utils ---------- */
+const $ = s => document.querySelector(s);
+const pad = n => String(n).padStart(2,'0');
+const ymd = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+const addDays = (d,n) => { const x = new Date(d); x.setDate(x.getDate()+n); return x; };
+const startOfWeek = d => addDays(d, -d.getDay());
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,8);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MON = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const PRI_RANK = {high:0, med:1, low:2};
+const PRI_LABEL = {high:'High', med:'Medium', low:'Low'};
+const fmtTime = t => { if(!t) return ''; let [h,m] = t.split(':').map(Number); const ap = h>=12?'pm':'am'; h = h%12||12; return m? `${h}:${pad(m)}${ap}` : `${h}${ap}`; };
+const toMin = t => { const [h,m] = t.split(':').map(Number); return h*60+m; };
+const fmtDay = s => { const d = parse(s); return `${DOW[d.getDay()]}, ${MON[d.getMonth()].slice(0,3)} ${d.getDate()}`; };
+function toast(msg){ const t = document.createElement('div'); t.className='toast'; t.textContent=msg; $('#toastRoot').append(t); setTimeout(()=>t.remove(), 2400); }
+
+/* ---------- storage: saved on this device ---------- */
+const COLLS = ['events','todos','notes','journal'];
+const store = {events:[], todos:[], notes:[], journal:[]};
+const LS_KEY = 'rosewood.planner.v1';
+function saveLocal(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(store)); }catch(e){} }
+function loadLocal(){
+  let raw = null; try{ raw = localStorage.getItem(LS_KEY); }catch(e){}
+  if(raw){ try{ const o = JSON.parse(raw); COLLS.forEach(c => store[c] = Array.isArray(o[c]) ? o[c] : []); }catch(e){} return; }
+  // first open: a few labeled examples so the planner shows how it works
+  const d0 = new Date(), t = ymd(d0), t1 = ymd(addDays(d0,1)), t2 = ymd(addDays(d0,2)), now = Date.now();
+  store.events = [
+    {id:'ex1', title:'Example: Client call (delete me)', date:t, start:'10:00', end:'10:45', location:'Zoom', priority:'high', notes:'Sample high-priority appointment.'},
+    {id:'ex2', title:'Example: Gym', date:t1, start:'17:30', end:'18:30', location:'', priority:'low', notes:''},
+    {id:'ex3', title:'Example: Planning review', date:t2, start:'13:00', end:'14:00', location:'Office', priority:'med', notes:''}];
+  store.todos = [
+    {id:'td1', text:'Example: add your own task', priority:'high', done:false, createdAt:now},
+    {id:'td2', text:'Example: tap a day in Month view to open it', priority:'low', done:false, createdAt:now+1}];
+  store.notes = [{id:'nt1', title:'Welcome', body:'Notes save as you type. Delete this one whenever you like.', updatedAt:now}];
+  store.journal = [{id:'jr1', date:t, title:'First page', body:'This is a sample entry. Replace it with your own or delete it.', mood:'Focused', createdAt:now}];
+  saveLocal();
+}
+function put(coll, item){
+  if(!item.id) item.id = uid();
+  const arr = store[coll]; const i = arr.findIndex(x => x.id === item.id);
+  if(i>=0) arr[i] = item; else arr.push(item);
+  saveLocal(); return item;
+}
+function del(coll, id){ store[coll] = store[coll].filter(x => x.id !== id); saveLocal(); }
+function connect(){ loadLocal(); renderAll(); }
+
+/* ---------- state ---------- */
+const today = () => ymd(new Date());
+let view = 'week', cursor = new Date(), showDone = false, tab = 'planner', currentEntry = null;
+try{ const v = localStorage.getItem('rosewood.view'); if(['day','week','month'].includes(v)) view = v; }catch(e){}
+
+/* ---------- planner rendering ---------- */
+function eventsOn(date){
+  return store.events.filter(e => e.date === date).sort((a,b) => (a.start||'99') < (b.start||'99') ? -1 : (a.start||'99') > (b.start||'99') ? 1 : PRI_RANK[a.priority]-PRI_RANK[b.priority]);
+}
+function evButton(e, extraStyle=''){
+  const time = e.start ? `${fmtTime(e.start)}${e.end ? '–'+fmtTime(e.end) : ''}` : 'Any time';
+  return `<button class="ev ${e.priority||'med'}" data-ev="${esc(e.id)}" style="${extraStyle}" title="${esc(e.title)} · ${PRI_LABEL[e.priority]||'Medium'} priority">
+    <span class="t">${e.priority==='high'?'★ ':''}${time}</span><span class="n">${esc(e.title)}</span>${e.location?`<span class="loc">${esc(e.location)}</span>`:''}</button>`;
+}
+function renderFocus(){
+  const t0 = today(), t7 = ymd(addDays(new Date(), 7));
+  const hi = store.events.filter(e => e.priority==='high' && e.date >= t0 && e.date <= t7).sort((a,b)=> (a.date+(a.start||'')).localeCompare(b.date+(b.start||'')));
+  const hiTodos = store.todos.filter(t => !t.done && t.priority==='high').length;
+  let h = `<div class="focus-label"><b>Priority focus</b><span>Next 7 days · ${hiTodos} high task${hiTodos===1?'':'s'} open</span></div>`;
+  h += hi.length ? hi.map(e => `<button class="fchip" data-ev="${esc(e.id)}"><span class="when">${e.date===t0?'Today':fmtDay(e.date)}${e.start?' · '+fmtTime(e.start):''}</span><span class="what">${esc(e.title)}</span></button>`).join('')
+    : `<div class="fchip empty"><span class="what">No high-priority appointments this week</span></div>`;
+  $('#focus').innerHTML = h;
+}
+function renderCal(){
+  document.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view===view)));
+  const body = $('#calBody'); const t = today();
+  if(view === 'day'){
+    const d = ymd(cursor), dt = parse(d);
+    $('#rangeLabel').textContent = `${DOW[dt.getDay()]}, ${MON[dt.getMonth()]} ${dt.getDate()}`;
+    const H0 = 6, H1 = 22, HH = 52;
+    const evs = eventsOn(d), timed = evs.filter(e => e.start), untimed = evs.filter(e => !e.start);
+    // overlap columns
+    const placed = []; timed.forEach(e => {
+      const s = Math.max(toMin(e.start), H0*60), en = Math.max(s+30, Math.min(e.end? toMin(e.end) : s+60, H1*60));
+      let col = 0; while(placed.some(p => p.col===col && p.s < en && s < p.en)) col++;
+      placed.push({e, s, en, col});
+    });
+    placed.forEach(p => p.cols = Math.max(...placed.filter(q => q.s < p.en && p.s < q.en).map(q => q.col)) + 1);
+    let hours = '', slots = '';
+    for(let h=H0; h<H1; h++){ hours += `<div class="tnum">${fmtTime(pad(h)+':00')}</div>`; slots += `<div class="slot" data-slot="${pad(h)}:00"></div>`; }
+    const blocks = placed.map(p => evButton(p.e, `top:${(p.s-H0*60)/60*HH+2}px;height:${(p.en-p.s)/60*HH-4}px;left:calc(${p.col/p.cols*100}% + 4px);width:calc(${100/p.cols}% - 8px)`)).join('');
+    const now = new Date(); const nm = now.getHours()*60+now.getMinutes();
+    const nowLine = (d===t && nm>=H0*60 && nm<H1*60) ? `<div class="nowline" style="top:${(nm-H0*60)/60*HH}px"></div>` : '';
+    body.innerHTML = `${untimed.length?`<div class="untimed">${untimed.map(e=>evButton(e)).join('')}</div>`:''}
+      <div class="dayscroll"><div class="day" style="--hh:${HH}px"><div class="hours">${hours}</div><div class="lane">${slots}${blocks}${nowLine}</div></div></div>`;
+    const sc = body.querySelector('.dayscroll'); sc.scrollTop = Math.max(0, ((timed[0]? toMin(timed[0].start) : 8*60) - H0*60 - 30)/60*HH);
+  } else if(view === 'week'){
+    const s = startOfWeek(cursor), e = addDays(s,6);
+    $('#rangeLabel').textContent = s.getMonth()===e.getMonth() ? `${MON[s.getMonth()]} ${s.getDate()}–${e.getDate()}` : `${MON[s.getMonth()].slice(0,3)} ${s.getDate()} – ${MON[e.getMonth()].slice(0,3)} ${e.getDate()}`;
+    let h = '';
+    for(let i=0;i<7;i++){ const d = ymd(addDays(s,i)), dt = addDays(s,i);
+      h += `<div class="wcol ${d===t?'is-today':''}"><button class="whead" data-day="${d}"><span class="dow">${DOW[i]}</span><span class="dn tnum">${dt.getDate()}</span></button>
+        ${eventsOn(d).map(ev=>evButton(ev)).join('')}<button class="wadd" data-add="${d}">+ Add</button></div>`; }
+    body.innerHTML = `<div class="week">${h}</div>`;
+  } else {
+    const y = cursor.getFullYear(), m = cursor.getMonth();
+    $('#rangeLabel').textContent = `${MON[m]} ${y}`;
+    const first = new Date(y, m, 1), s = startOfWeek(first);
+    const weeks = Math.ceil((first.getDay() + new Date(y, m+1, 0).getDate())/7);
+    let h = DOW.map(d => `<div class="mdow">${d}</div>`).join('');
+    for(let i=0;i<weeks*7;i++){ const dt = addDays(s,i), d = ymd(dt), evs = eventsOn(d).sort((a,b)=>PRI_RANK[a.priority]-PRI_RANK[b.priority]);
+      h += `<button class="mcell ${dt.getMonth()!==m?'out':''} ${d===t?'is-today':''}" data-day="${d}" aria-label="${fmtDay(d)}, ${evs.length} appointments">
+        <span class="d tnum">${dt.getDate()}</span>
+        ${evs.slice(0,3).map(e=>`<span class="mini ${e.priority}">${e.start?fmtTime(e.start)+' ':''}${esc(e.title)}</span>`).join('')}
+        ${evs.length>3?`<span class="more">+${evs.length-3} more</span>`:''}
+        <span class="dots">${evs.map(e=>`<i class="${e.priority}"></i>`).join('')}</span></button>`; }
+    body.innerHTML = `<div class="month">${h}</div>`;
+  }
+}
+function renderTodos(){
+  const open = store.todos.filter(t=>!t.done).length;
+  $('#todoCount').textContent = `${open} open`;
+  const list = store.todos.filter(t => showDone || !t.done).sort((a,b) => (a.done-b.done) || (PRI_RANK[a.priority]-PRI_RANK[b.priority]) || ((a.createdAt||0)-(b.createdAt||0)));
+  $('#todoList').innerHTML = list.length ? list.map(t => `<li class="todo ${t.priority} ${t.done?'done':''}">
+      <input type="checkbox" id="td-${esc(t.id)}" data-todo="${esc(t.id)}" ${t.done?'checked':''} aria-label="Mark done">
+      <label class="txt" for="td-${esc(t.id)}">${esc(t.text)}</label>
+      <span class="pri ${t.priority}">${t.priority==='med'?'Med':PRI_LABEL[t.priority]}</span>
+      <button class="x" data-deltodo="${esc(t.id)}" aria-label="Delete task">×</button></li>`).join('')
+    : `<li class="empty">Nothing on the list. Add your first task above.</li>`;
+  const doneN = store.todos.length - open;
+  $('#toggleDone').textContent = showDone ? 'Hide completed' : `Show completed (${doneN})`;
+  $('#toggleDone').hidden = doneN === 0;
+}
+function renderNotes(){
+  const notes = [...store.notes].sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));
+  $('#noteList').innerHTML = notes.length ? notes.map(n => `<div class="note" data-note="${esc(n.id)}">
+      <div class="nh"><input id="nt-${esc(n.id)}" value="${esc(n.title)}" placeholder="Title" aria-label="Note title"><button class="x" data-delnote="${esc(n.id)}" aria-label="Delete note">×</button></div>
+      <textarea id="nb-${esc(n.id)}" placeholder="Write anything…" aria-label="Note">${esc(n.body)}</textarea>
+      <span class="stamp">Edited ${n.updatedAt? new Date(n.updatedAt).toLocaleString([], {month:'short', day:'numeric', hour:'numeric', minute:'2-digit'}) : ''}</span></div>`).join('')
+    : `<div class="empty">No notes yet.</div>`;
+}
+
+/* ---------- journal ---------- */
+const MOODS = ['Grateful','Calm','Focused','Energized','Tired','Stressed','Proud'];
+const PROMPTS = ['What went well today?','What’s on your mind right now?','One thing you’re grateful for, and why.','What would make tomorrow great?','What did you learn this week?'];
+function renderJList(){
+  const q = $('#jsearch').value.trim().toLowerCase();
+  const items = [...store.journal].sort((a,b)=> (b.date||'').localeCompare(a.date||'') || (b.createdAt||0)-(a.createdAt||0))
+    .filter(j => !q || (j.title+' '+j.body+' '+(j.mood||'')).toLowerCase().includes(q));
+  $('#jitems').innerHTML = items.length ? items.map(j => `<button class="jitem" data-entry="${esc(j.id)}" aria-current="${j.id===currentEntry}">
+      <span class="jd">${fmtDay(j.date)}${j.mood?' · '+esc(j.mood):''}</span><span class="jt">${esc(j.title||'Untitled')}</span><span class="jp">${esc((j.body||'').slice(0,160))}</span></button>`).join('')
+    : `<div class="empty">${q?'No entries match.':'Your journal is empty. Start one today.'}</div>`;
+}
+function renderJEditor(){
+  const j = store.journal.find(x => x.id === currentEntry);
+  if(!j){
+    $('#jed').innerHTML = `<p class="prompt">${PROMPTS[new Date().getDate()%PROMPTS.length]}</p>
+      <p style="color:var(--ink-2); max-width:52ch">Pick an entry on the left or start a new one. Entries save as you type.</p>
+      <div><button class="btn primary" id="startEntry">Start today’s entry</button></div>`;
+    return;
+  }
+  const words = (j.body||'').trim().split(/\s+/).filter(Boolean).length;
+  $('#jed').innerHTML = `<div class="jmeta"><input type="date" class="field" id="jdate" value="${esc(j.date)}" style="width:auto" aria-label="Entry date">
+      <div class="moods" role="group" aria-label="Mood">${MOODS.map(m=>`<button class="mood" data-mood="${m}" aria-pressed="${j.mood===m}">${m}</button>`).join('')}</div></div>
+    <input class="jtitle" id="jtitle" value="${esc(j.title)}" placeholder="Give today a title">
+    <textarea id="jbody" placeholder="${esc(PROMPTS[(parse(j.date).getDate())%PROMPTS.length])}">${esc(j.body)}</textarea>
+    <div class="jfoot"><span class="tnum" id="jwords">${words} words · saves as you type</span>
+      <span id="jdelwrap"><button class="btn danger" id="jdel">Delete entry</button></span></div>`;
+}
+function newEntry(){ const j = put('journal', {date: today(), title:'', body:'', mood:'', createdAt: Date.now()}); currentEntry = j.id; renderJList(); renderJEditor(); $('#jtitle')?.focus(); }
+
+/* ---------- soft render: don't clobber the field being typed in ---------- */
+function renderSoft(c){
+  const a = document.activeElement;
+  if(c==='notes'){ if(!(a && a.closest && a.closest('#noteList'))) renderNotes(); }
+  if(c==='journal'){ renderJList(); if(!(a && a.closest && a.closest('#jed'))) renderJEditor(); }
+}
+function renderAll(){
+  $('#todayLabel').textContent = new Date().toLocaleDateString([], {weekday:'long', month:'long', day:'numeric', year:'numeric'});
+  renderFocus(); renderCal(); renderTodos(); renderSoft('notes'); renderSoft('journal');
+}
+
+/* ---------- appointment modal ---------- */
+function openEvent(ev, presetDate, presetTime){
+  const e = ev ? {...ev} : {title:'', date: presetDate || ymd(cursor), start: presetTime || '', end: presetTime ? pad(Math.min(23, +presetTime.slice(0,2)+1))+':00' : '', location:'', priority:'med', notes:''};
+  const root = $('#modalRoot');
+  root.innerHTML = `<div class="scrim" id="scrim"><form class="panel modal" id="evForm" aria-label="${ev?'Edit':'New'} appointment">
+    <h3>${ev?'Edit appointment':'New appointment'}</h3>
+    <label class="f">Title<input class="field" id="ef-title" required value="${esc(e.title)}" placeholder="e.g. Dentist, client call, gym"></label>
+    <div class="row">
+      <label class="f">Date<input class="field" type="date" id="ef-date" required value="${esc(e.date)}"></label>
+      <label class="f">Start<input class="field" type="time" id="ef-start" value="${esc(e.start)}"></label>
+      <label class="f">End<input class="field" type="time" id="ef-end" value="${esc(e.end)}"></label>
+    </div>
+    <div class="f" style="font-size:12px;font-weight:600;color:var(--ink-2);text-transform:uppercase;letter-spacing:.05em">Priority
+      <div class="prichoice" role="group" aria-label="Priority" style="margin-top:4px">
+        ${['high','med','low'].map(p=>`<button type="button" class="${p}" data-pri="${p}" aria-pressed="${e.priority===p}">${PRI_LABEL[p]}</button>`).join('')}
+      </div></div>
+    <label class="f">Location<input class="field" id="ef-loc" value="${esc(e.location)}" placeholder="Optional"></label>
+    <label class="f">Notes<textarea class="field" id="ef-notes" rows="3" placeholder="Optional">${esc(e.notes)}</textarea></label>
+    <div class="mfoot">
+      <div class="r" id="delwrap">${ev?`<button type="button" class="btn danger" id="ef-del">Delete</button>`:''}
+        <button type="button" class="btn" id="ef-ics" title="Download a calendar file you can open on your iPhone">Add to iPhone Calendar</button></div>
+      <div class="r"><button type="button" class="btn ghost" id="ef-cancel">Cancel</button><button type="submit" class="btn primary">Save</button></div>
+    </div></form></div>`;
+  let pri = e.priority;
+  const read = () => ({...e, title: $('#ef-title').value.trim(), date: $('#ef-date').value, start: $('#ef-start').value, end: $('#ef-end').value, location: $('#ef-loc').value.trim(), notes: $('#ef-notes').value.trim(), priority: pri});
+  root.querySelectorAll('[data-pri]').forEach(b => b.onclick = () => { pri = b.dataset.pri; root.querySelectorAll('[data-pri]').forEach(x => x.setAttribute('aria-pressed', String(x===b))); });
+  const close = () => root.innerHTML = '';
+  $('#ef-cancel').onclick = close;
+  $('#scrim').onclick = ev2 => { if(ev2.target.id==='scrim') close(); };
+  $('#evForm').onkeydown = k => { if(k.key==='Escape') close(); };
+  $('#evForm').onsubmit = sub => { sub.preventDefault(); const v = read(); if(!v.title || !v.date) return;
+    if(v.start && v.end && v.end <= v.start) v.end = ''; put('events', v); close(); renderAll(); toast(ev?'Appointment updated':'Appointment added'); };
+  if(ev) $('#ef-del').onclick = () => {
+    $('#delwrap').innerHTML = `<span class="confirm">Delete this appointment? <button type="button" class="btn danger" id="ef-yes">Delete</button><button type="button" class="btn ghost" id="ef-no">Keep</button></span>`;
+    $('#ef-yes').onclick = () => { del('events', ev.id); close(); renderAll(); toast('Appointment deleted'); };
+    $('#ef-no').onclick = () => openEvent(read());
+  };
+  $('#ef-ics').onclick = () => { const v = read(); if(!v.title || !v.date){ toast('Add a title and date first'); return; } exportICS([v], `${v.title.replace(/[^\w\- ]+/g,'').trim()||'appointment'}.ics`); };
+  setTimeout(()=>$('#ef-title').focus(), 30);
+}
+
+/* ---------- iPhone calendar export (.ics) ---------- */
+function icsEsc(s){ return String(s||'').replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n'); }
+function buildICS(evs){
+  const stamp = new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
+  const lines = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Rosewood Planner//EN','CALSCALE:GREGORIAN'];
+  evs.forEach(e => {
+    const d = e.date.replace(/-/g,'');
+    lines.push('BEGIN:VEVENT', `UID:${e.id||uid()}@rosewood-planner`, `DTSTAMP:${stamp}`);
+    if(e.start){ const end = e.end || pad(Math.min(23, +e.start.slice(0,2)+1))+e.start.slice(2);
+      lines.push(`DTSTART:${d}T${e.start.replace(':','')}00`, `DTEND:${d}T${end.replace(':','')}00`); }
+    else { const n = ymd(addDays(parse(e.date),1)).replace(/-/g,''); lines.push(`DTSTART;VALUE=DATE:${d}`, `DTEND;VALUE=DATE:${n}`); }
+    lines.push(`SUMMARY:${icsEsc((e.priority==='high'?'★ ':'')+e.title)}`, `PRIORITY:${{high:1,med:5,low:9}[e.priority]||5}`);
+    if(e.location) lines.push(`LOCATION:${icsEsc(e.location)}`);
+    lines.push(`DESCRIPTION:${icsEsc(`${PRI_LABEL[e.priority]||'Medium'} priority${e.notes?'\n'+e.notes:''}`)}`);
+    const mins = {high:[60,15], med:[30], low:[10]}[e.priority] || [30];
+    if(e.start) mins.forEach(m => lines.push('BEGIN:VALARM','ACTION:DISPLAY',`DESCRIPTION:${icsEsc(e.title)}`,`TRIGGER:-PT${m}M`,'END:VALARM'));
+    lines.push('END:VEVENT');
+  });
+  lines.push('END:VCALENDAR');
+  return lines.join('\r\n');
+}
+function exportICS(evs, filename){
+  const ics = buildICS(evs);
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+  const a = document.createElement('a');
+  if(isIOS){ a.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics); }
+  else { a.href = URL.createObjectURL(new Blob([ics], {type:'text/calendar'})); a.download = filename; setTimeout(()=>URL.revokeObjectURL(a.href), 4000); }
+  document.body.append(a); a.click(); a.remove();
+  toast(isIOS ? 'Tap “Add” to put it in your Calendar' : 'Calendar file saved. Open it to add the event.');
+}
+/* ---------- events wiring ---------- */
+document.addEventListener('click', ev => {
+  const t = ev.target.closest('[data-ev],[data-day],[data-add],[data-slot],[data-deltodo],[data-delnote],[data-entry],[data-mood],#jdel,#startEntry');
+  if(!t) return;
+  if(t.dataset.ev){ const e = store.events.find(x => x.id===t.dataset.ev); if(e) openEvent(e); return; }
+  if(t.dataset.add){ openEvent(null, t.dataset.add); return; }
+  if(t.dataset.slot){ openEvent(null, ymd(cursor), t.dataset.slot); return; }
+  if(t.dataset.day){ cursor = parse(t.dataset.day); setView('day'); return; }
+  if(t.dataset.deltodo){ del('todos', t.dataset.deltodo); renderTodos(); renderFocus(); return; }
+  if(t.dataset.delnote){ del('notes', t.dataset.delnote); renderNotes(); return; }
+  if(t.dataset.entry){ currentEntry = t.dataset.entry; renderJList(); renderJEditor(); return; }
+  if(t.dataset.mood){ const j = store.journal.find(x=>x.id===currentEntry); if(!j) return; const m = j.mood===t.dataset.mood ? '' : t.dataset.mood;
+    put('journal', {...j, mood:m, updatedAt:Date.now()}); document.querySelectorAll('[data-mood]').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.mood===m))); renderJList(); return; }
+  if(t.id==='startEntry'){ const ex = store.journal.find(j => j.date===today()); if(ex){ currentEntry = ex.id; renderJList(); renderJEditor(); } else newEntry(); return; }
+  if(t.id==='jdel'){ $('#jdelwrap').innerHTML = `<span class="confirm">Delete this entry for good? <button class="btn danger" id="jyes">Delete</button><button class="btn ghost" id="jno">Keep</button></span>`;
+    $('#jyes').onclick = () => { del('journal', currentEntry); currentEntry = null; renderJList(); renderJEditor(); toast('Entry deleted'); };
+    $('#jno').onclick = () => renderJEditor(); }
+});
+document.addEventListener('change', ev => {
+  const t = ev.target;
+  if(t.dataset.todo){ const td = store.todos.find(x=>x.id===t.dataset.todo); if(td){ put('todos', {...td, done:t.checked, doneAt: t.checked?Date.now():null}); renderTodos(); renderFocus(); } }
+  if(t.id==='jdate'){ const j = store.journal.find(x=>x.id===currentEntry); if(j && t.value){ put('journal', {...j, date:t.value, updatedAt:Date.now()}); renderJList(); } }
+});
+// debounced typing saves (one write per pause)
+const timers = {};
+function debounce(key, fn, ms=700){ clearTimeout(timers[key]); timers[key] = setTimeout(fn, ms); }
+document.addEventListener('input', ev => {
+  const t = ev.target, noteEl = t.closest('[data-note]');
+  if(noteEl){ const id = noteEl.dataset.note; debounce('n'+id, () => { const n = store.notes.find(x=>x.id===id); if(!n) return;
+      put('notes', {...n, title: $('#nt-'+id).value, body: $('#nb-'+id).value, updatedAt: Date.now()}); }); return; }
+  if(t.id==='jtitle' || t.id==='jbody'){
+    if(t.id==='jbody') $('#jwords').textContent = `${t.value.trim().split(/\s+/).filter(Boolean).length} words · saving…`;
+    debounce('j', () => { const j = store.journal.find(x=>x.id===currentEntry); if(!j) return;
+      put('journal', {...j, title: $('#jtitle').value, body: $('#jbody').value, updatedAt: Date.now()}); renderJList();
+      const w = $('#jwords'); if(w) w.textContent = w.textContent.replace('saving…','saved'); }); return; }
+  if(t.id==='jsearch') renderJList();
+});
+$('#todoForm').onsubmit = ev => { ev.preventDefault(); const text = $('#todoText').value.trim(); if(!text) return;
+  put('todos', {text, priority: $('#todoPri').value, done:false, createdAt: Date.now()}); $('#todoText').value=''; renderTodos(); renderFocus(); };
+$('#toggleDone').onclick = () => { showDone = !showDone; renderTodos(); };
+$('#addNote').onclick = () => { const n = put('notes', {title:'', body:'', updatedAt: Date.now()}); renderNotes(); $('#nt-'+n.id)?.focus(); };
+$('#newEvent').onclick = () => openEvent(null, view==='day' ? ymd(cursor) : (ymd(cursor)===today() || view!=='month' ? today() : ymd(cursor)));
+$('#newEntry').onclick = newEntry;
+function setView(v){ view = v; try{ localStorage.setItem('rosewood.view', v); }catch(e){} renderCal(); }
+document.querySelectorAll('.seg button').forEach(b => b.onclick = () => setView(b.dataset.view));
+function shift(dir){ if(view==='day') cursor = addDays(cursor, dir); else if(view==='week') cursor = addDays(cursor, 7*dir); else cursor = new Date(cursor.getFullYear(), cursor.getMonth()+dir, 1); renderCal(); }
+$('#prev').onclick = () => shift(-1); $('#next').onclick = () => shift(1);
+$('#goToday').onclick = () => { cursor = new Date(); renderCal(); };
+function setTab(t){ tab = t; $('#view-planner').hidden = t!=='planner'; $('#view-journal').hidden = t!=='journal';
+  $('#tab-planner').setAttribute('aria-selected', String(t==='planner')); $('#tab-journal').setAttribute('aria-selected', String(t==='journal'));
+  if(t==='journal'){ renderJList(); renderJEditor(); } }
+$('#tab-planner').onclick = () => setTab('planner'); $('#tab-journal').onclick = () => setTab('journal');
+if(location.hash === '#journal') setTab('journal');
+setInterval(() => { if(view==='day' && ymd(cursor)===today() && !document.querySelector('.scrim')) { const sc = document.querySelector('.dayscroll'); const top = sc?.scrollTop; renderCal(); const sc2 = document.querySelector('.dayscroll'); if(sc2 && top!=null) sc2.scrollTop = top; } }, 60000);
+
+connect();
+})();
+</script>
+</body>
+</html>
